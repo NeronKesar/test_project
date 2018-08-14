@@ -10,11 +10,39 @@ import { connect } from 'react-redux';
 class Element extends Component {
   render() {
     console.log('ELEMENT', this.props.element);
-    return (
-      <View style={styles.container}>
-        <Text>text</Text>
-      </View>
-    );
+    if (!this.props.element) {
+      return <ActivityIndicator />
+    } else {
+      return (
+        <View style={styles.container}>
+
+          <View style={styles.textContainer}>
+
+            <Text>Title: </Text>
+
+            <Text>{this.props.element.title.toUpperCase()}</Text>
+
+          </View>
+
+          <View style={styles.textContainer}>
+
+            <Text>Release year: </Text>
+
+            <Text>{this.props.element.releaseYear}</Text>
+
+          </View>
+
+          <View style={styles.textContainer}>
+
+            <Text>List position: </Text>
+
+            <Text>{this.props.element.id}</Text>
+
+          </View>
+
+        </View>
+      );
+    }
   }
 }
 
@@ -26,14 +54,10 @@ export default connect(state => ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    paddingLeft: 30,
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  
+  textContainer: {
+    flexDirection: 'row',
+    paddingVertical: 20,
+  }
 });

@@ -17,10 +17,6 @@ class List extends Component {
     super(props);
   }
 
-  componentDidMount() {
-    this.props.getList();
-  }
-
   keyExtractor = (item) => item.title;
 
   renderItem = ({ item }) => {
@@ -69,7 +65,7 @@ const styles = StyleSheet.create({
   item: {
     fontSize: 20,
     textAlign: 'center',
-    margin: 10,
+    paddingVertical: 20,
   },
 });
 

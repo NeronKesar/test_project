@@ -3,7 +3,8 @@ import {createStore, applyMiddleware, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
 import { Navigation } from 'react-native-navigation';
 import registerScreens from './components/screens/screens.js';
-import * as reducers from './reducers/index';
+import * as reducers from './reducers';
+import { getList } from './actions';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
@@ -17,6 +18,8 @@ export default class App extends Component {
 
   constructor(props) {
     super(props);
+
+    store.dispatch(getList());
 
     Navigation.startTabBasedApp({
       tabs: [
@@ -39,6 +42,10 @@ export default class App extends Component {
           navigatorStyle: {}
         }
       ],
+      appStyle: {
+        tabBarBackgroundColor: 'transparent',
+        tabBarButtonColor: 'red',
+      }
     });
   }
 }
