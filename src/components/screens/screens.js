@@ -4,6 +4,6 @@ import Element from './Element';
 
 
 export default (store, Provider) =>  {
-	Navigation.registerComponent('ReactNativeReduxExample.List', () => List, store, Provider);
-	Navigation.registerComponent('ReactNativeReduxExample.Element', () => Element, store, Provider);
+	Navigation.registerComponent('test_project.List', () => List, store, Provider);
+	Navigation.registerComponent('test_project.Element', () => Element, store, Provider);
 }
