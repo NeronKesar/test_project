@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {createStore, applyMiddleware, combineReducers} from 'redux';
-import {Provider} from 'react-redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
 import { Navigation } from 'react-native-navigation';
 import registerScreens from './components/screens/screens.js';
 import * as reducers from './reducers';
@@ -26,26 +26,17 @@ export default class App extends Component {
         {
           label: 'List',
           screen: 'test_project.List',
-          icon: require('./img/icon1.png'),
-          selectedIcon: require('./img/icon1_selected.png'),
-          title: 'test_project',
-          overrideBackPress: false,
-          navigatorStyle: {}
+          icon: require('./img/list.png'),
+          title: 'List',
         },
 
         {
           label: 'Element',
           screen: 'test_project.Element',
           icon: require('./img/icon2.png'),
-          selectedIcon: require('./img/icon2_selected.png'),
-          title: 'test_project',
-          navigatorStyle: {}
+          title: 'Element',
         }
       ],
-      appStyle: {
-        tabBarBackgroundColor: 'transparent',
-        tabBarButtonColor: 'red',
-      }
     });
   }
 }
